@@ -4,6 +4,9 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
+class IngresoIncorrecto(Exception):
+    pass
+
 def ingreso_entero(mensaje):
 
     ingreso = input(mensaje + " #")
@@ -23,17 +26,14 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
             print(f"No ingresaste un numero entero, te quedan {cantidad_reintentos} intentos")
     raise IngresoIncorrecto("Te quedaste sin mas intentos")
 
-def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
+def ingreso_entero_restringido(mensaje):
     rango = (int(input("ingrese un valor entre 0 y 10 #")))
     if (rango <= 10 and rango >= 0):
         print(f"El numero ingresado {rango} es correcto")
+        return rango
     else:
         print("El nomero ingresado no pertenece al rango entre 0 y 10")
-        raise IngresoIncorrecto(f"no es un valor correcto, ingrese un numero entre 0-10")
-    
-    
-class IngresoIncorrecto(Exception):
-    pass
+        return rango
     
     
 def prueba():
