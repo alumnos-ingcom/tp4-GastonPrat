@@ -8,7 +8,6 @@ class IngresoIncorrecto(Exception):
     pass
 
 def ingreso_entero(mensaje):
-
     ingreso = input(mensaje + " #")
     try:
         entero = int(ingreso)
@@ -26,14 +25,14 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
             print(f"No ingresaste un numero entero, te quedan {cantidad_reintentos} intentos")
     raise IngresoIncorrecto("Te quedaste sin mas intentos")
 
-def ingreso_entero_restringido(mensaje):
-    rango = (int(input("ingrese un valor entre 0 y 10 #")))
-    if (rango <= 10 and rango >= 0):
-        print(f"El numero ingresado {rango} es correcto")
-        return rango
+def ingreso_entero_restringido(mensaje,minimo = 0, maximo = 10):
+    mensaje2 = f"Ingresar un numero entre {minimo} y {maximo}"
+    num = ingreso_entero(mensaje2)
+    if (num >= 0 and num <= 10):
+        return num
+        print(f"El numero ingresado {num} es correcto")
     else:
         print("El nomero ingresado no pertenece al rango entre 0 y 10")
-        return rango
     
     
 def prueba():
