@@ -34,7 +34,6 @@ def ingreso_entero_restringido(mensaje,minimo = 0, maximo = 10):
     else:
         raise IngresoIncorrecto("El nomero ingresado no pertenece al rango entre 0 y 10")
     
-    
 def prueba():
     print(ingreso_entero_reintento("Ingrese un Numero Entero"))
     print(ingreso_entero_restringido("Ingrese un numero entero entre 0 y 10"))
