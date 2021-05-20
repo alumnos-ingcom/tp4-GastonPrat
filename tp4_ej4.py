@@ -4,8 +4,6 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 from tp4_ej1 import ingreso_entero, IngresoIncorrecto
-class IngresoIncorrecto(Exception):
-    pass
 
 def compara(numero1, numero2):
     numero1 = ingreso_entero(numero1)
