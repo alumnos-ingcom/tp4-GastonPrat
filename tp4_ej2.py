@@ -4,8 +4,6 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 from tp4_ej1 import ingreso_entero, IngresoIncorrecto
-class IngresoIncorrecto(Exception):
-    pass
 
 def suma_lenta(numero, otro_numero):
         numero = ingreso_entero(numero)
