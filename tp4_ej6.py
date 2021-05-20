@@ -4,8 +4,6 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 from tp4_ej1 import ingreso_entero, IngresoIncorrecto
-class IngresoIncorrecto(Exception):
-    pass
 
 def minimo(lista):
     lista_min = []
@@ -24,11 +22,6 @@ def maximo(lista):
         agregados = agregados + 1
     else:
         return max(lista_max)
-
-
-
-
-
 
 def prueba():
     print("Se imprimirá el número más chico de los 4 ingresados")
