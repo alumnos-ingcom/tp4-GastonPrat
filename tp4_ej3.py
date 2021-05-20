@@ -3,17 +3,17 @@
 # Ejercicio 3
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-
 class IngresoIncorrecto(Exception):
     pass
 
 def ingreso_grados(mensaje):
     ingreso = input(mensaje + " #")
     try:
-        entero = float(ingreso)
+        real = float(ingreso)
     except ValueError as err:
-        raise IngresoIncorrecto("No era un NÚMERO!") from err
-    return entero
+        print("Eso no era un Número, intenta nuevamente")
+        return prueba()
+    return real
 
 def convertir_a_fahrrenheit(mensaje):
     try:
