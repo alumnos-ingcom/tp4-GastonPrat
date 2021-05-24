@@ -6,28 +6,32 @@
 from tp4_ej1 import ingreso_entero, IngresoIncorrecto
 
 def division_lenta(dividendo, divisor):
-    dividendo = ingreso_entero(dividendo)
-    divisor = ingreso_entero(divisor)
-    if divisor > 0 and dividendo > divisor:
+    if divisor > 0:
         cociente = 0
         resto = dividendo
+        resultados = []
         while divisor <= resto:
             resto = resto - divisor
             cociente = cociente +1
-            msj = f"Resto={resto} --- Cociente={cociente}"
-            print(msj)
+            msj = f"Resto={resto} / Cociente={cociente}"
+            resultados.append(msj)
         else:
-            msj = f"El resto es {resto} y el cociente es {cociente}"
-            return msj
-    elif dividendo < divisor:
-        msj = "el dividendo es menor al divisor, intente otra vez"
-        return msj
+            msj = f"Resto={resto} / Cociente={cociente}"
+            resultados.append(msj)
+#     elif dividendo < divisor:
+#         msj = "el dividendo es menor al divisor, intente otra vez"
+#         return msj
     else:
-        msj = f"No se puede realizar esta operación, intente otra vez"
-        return msj
+        raise IngresoIncorrecto("El divisor no puede ser cero")
+    return resultados
 
 def prueba():
-    print(division_lenta("Escriba un número", "Ingrese su divisor"))
+    dividendo = ingreso_entero("Ingrese un número entero")
+    divisor = ingreso_entero("ingresa un número entero que sera su divisor")
+    resultados = division_lenta(dividendo, divisor)
+    print(resultados)
+    
+    
 
 if __name__ == "__main__":
     prueba()
