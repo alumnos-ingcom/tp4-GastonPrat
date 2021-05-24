@@ -7,9 +7,6 @@ from tp4_ej1 import ingreso_entero, IngresoIncorrecto
 
 def ordenar_mayor_a_menor(uno, dos, tres):
     mayor_menor = []
-    uno = ingreso_entero(uno)
-    dos = ingreso_entero(dos)
-    tres = ingreso_entero(tres)
     if uno >= dos:
         if uno >= tres:
             mayor_menor.append(uno)
@@ -29,6 +26,9 @@ def ordenar_mayor_a_menor(uno, dos, tres):
             if uno >= tres:
                 mayor_menor.append(uno)
                 mayor_menor.append(tres)
+            else:
+                mayor_menor.append(tres)
+                mayor_menor.append(uno)
         else:
             mayor_menor.append(tres)
             mayor_menor.append(dos)
@@ -37,9 +37,6 @@ def ordenar_mayor_a_menor(uno, dos, tres):
 
 def ordenar_menor_a_mayor(uno, dos, tres):
     menor_mayor = []
-    uno = ingreso_entero(uno)
-    dos = ingreso_entero(dos)
-    tres = ingreso_entero(tres)
     if uno <= dos:
         if uno <= tres:
             menor_mayor.append(uno)
@@ -59,6 +56,9 @@ def ordenar_menor_a_mayor(uno, dos, tres):
             if uno <= tres:
                 menor_mayor.append(uno)
                 menor_mayor.append(tres)
+            else:
+                menor_mayor.append(tres)
+                menor_mayor.append(uno)
         else:
             menor_mayor.append(tres)
             menor_mayor.append(dos)
@@ -66,11 +66,19 @@ def ordenar_menor_a_mayor(uno, dos, tres):
     return tuple(menor_mayor)
 def prueba():
     print("El siguiente programa imprimirá los numero de Mayor a Menor")
-    print(ordenar_mayor_a_menor("Ingresa un Número", "Ingresa un otro "
-                                "Número", "Ingresa un el ultimo Número"))
+    uno = ingreso_entero("Ingrese un Número Entero")
+    dos = ingreso_entero("Ingrese otro Número Entero")
+    tres = ingreso_entero("Ingrese el último Número Entero")
+    mayor_menor = ordenar_mayor_a_menor(uno, dos, tres)
+    print(mayor_menor)
+    
     print("El siguiente programa imprimirá los numero de Menor a Mayor")
-    print(ordenar_menor_a_mayor("Ingresa un Número", "Ingresa un otro "
-                                "Número", "Ingresa un el ultimo Número"))
+    uno = ingreso_entero("Ingrese un Número Entero")
+    dos = ingreso_entero("Ingrese otro Número Entero")
+    tres = ingreso_entero("Ingrese el último Número Entero")
+    menor_mayor = ordenar_menor_a_mayor(uno, dos, tres)
+    print(menor_mayor)
+    
 
 if __name__ == "__main__":
     prueba()
