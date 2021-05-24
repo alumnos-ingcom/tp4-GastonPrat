@@ -72,10 +72,7 @@ def prueba():
     mayor_menor = ordenar_mayor_a_menor(uno, dos, tres)
     print(mayor_menor)
     
-    print("El siguiente programa imprimirá los numero de Menor a Mayor")
-    uno = ingreso_entero("Ingrese un Número Entero")
-    dos = ingreso_entero("Ingrese otro Número Entero")
-    tres = ingreso_entero("Ingrese el último Número Entero")
+    print("Aquí se imprimiran los mismos números de Menor a Mayor")
     menor_mayor = ordenar_menor_a_mayor(uno, dos, tres)
     print(menor_mayor)
     
