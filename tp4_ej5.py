@@ -6,7 +6,6 @@
 from tp4_ej1 import ingreso_entero, IngresoIncorrecto
 
 def signo(numero):
-    numero = ingreso_entero(numero)
     if numero > 0:
         msj = f"el numero {numero} es positivo"
         return msj        
@@ -18,7 +17,10 @@ def signo(numero):
         return msj
 
 def prueba():
-    print(signo("Ingrese un numero entero"))
+    print("Este programa le dira si el número es Mayor, Menor o Cero")
+    numero = ingreso_entero("Ingrese un Número Entero")
+    msj = signo(numero)
+    print(msj)
 
 if __name__ == "__main__":
     prueba()
