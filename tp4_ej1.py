@@ -33,11 +33,14 @@ def ingreso_entero_restringido(mensaje,minimo = 0, maximo = 10):
         return num
         print(f"El numero ingresado {num} es correcto")
     else:
-        raise IngresoIncorrecto("El nomero ingresado no pertenece al rango entre 0 y 10")
+        raise IngresoIncorrecto("El nomero ingresado no pertenece al rango entre"
+                                f" {maximo} y {minimo}")
     
 def prueba():
-    print(ingreso_entero_reintento("Ingrese un Numero Entero"))
-    print(ingreso_entero_restringido("Ingrese un numero entero entre 0 y 10"))
+    ingreso_entero_reintento("Ingrese un Número Entero")
+    print("su número ingresado es correcto")
+    ingreso_entero_restringido(f"Ingrese un Número Entero")
+    print(f"su número ingresado es correcto")
 
 if __name__ == "__main__":
     prueba()
