@@ -6,7 +6,7 @@
 class IngresoIncorrecto(Exception):
     pass
 
-def ingreso_grados(mensaje):
+def ingreso_float(mensaje):
     ingreso = input(mensaje + " #")
     try:
         real = float(ingreso)
@@ -15,18 +15,16 @@ def ingreso_grados(mensaje):
         return prueba()
     return real
 
-def convertir_a_fahrrenheit(mensaje):
+def convertir_a_fahrrenheit(in_celcius):
     try:
-        in_celcius = ingreso_grados(mensaje)
         fahrrenheit = ((in_celcius * 1.8) + 32)
         msj = f"La Temperatura de {in_celcius}°C equivale a {fahrrenheit}°F"
     except ValueError as err:
         raise IngresoIncorrecto
     return msj
     
-def convertir_a_centigrados(mensaje):
+def convertir_a_centigrados(in_fahrren):
     try:
-        in_fahrren = ingreso_grados(mensaje)
         centigrados = ((in_fahrren - 32) / 1.8)
         msj = f"La Temperatura de {in_fahrren}°C equivale a {centigrados}°F"
     except ValueError as err:
@@ -34,9 +32,15 @@ def convertir_a_centigrados(mensaje):
     return msj
 
 def prueba():
-    print(convertir_a_fahrrenheit("Ingrese una temperatura en °C"))
+    print("Esto pasara de °C --->°F")
+    in_celcius = ingreso_float("Ingrese temperatura en grados Celcius")
+    msj = convertir_a_fahrrenheit(in_celcius)
+    print(msj)
     
-    print(convertir_a_centigrados("Ingrese una temperatura en °F"))
+    print("Esto pasara de °F --->°C")
+    in_fahrren = ingreso_float("Ingrese temperatura en grados fahrrenheit")
+    msj = convertir_a_centigrados(in_fahrren)
+    print(msj)
     
 
 if __name__ == "__main__":
