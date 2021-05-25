@@ -3,12 +3,19 @@
 # Ejercicio 11
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
+from tp4_ej1 import IngresoIncorrecto
 
-def es_palindromo(texto):
+def es_palindromo(texto, ignorar_espacios=False, ignorar_mayusculas=False):
     str(texto)
-    texto = texto.lower()
-    texto = texto.replace(" ", "")
-    inversa = texto[ : : -1]
+    if ignorar_espacios:
+        return texto
+    else:
+        texto = texto.replace(" ", "")
+    if ignorar_mayusculas:
+        return texto
+    else:
+        texto = texto.lower()
+    inversa = texto[::-1]
     palindromo = inversa == texto
     return palindromo    
     
