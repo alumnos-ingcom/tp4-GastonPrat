@@ -29,8 +29,8 @@ def prueba():
     dividendo = ingreso_entero("Ingrese un número entero")
     divisor = ingreso_entero("ingresa un número entero que sera su divisor")
     resultados = division_lenta(dividendo, divisor)
-    print(resultados)
-    
+    for item in(resultados):
+        print(item)   
     
 
 if __name__ == "__main__":
