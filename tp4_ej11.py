@@ -5,15 +5,11 @@
 ################
 from tp4_ej1 import IngresoIncorrecto
 
-def es_palindromo(texto, ignorar_espacios=False, ignorar_mayusculas=False):
+def es_palindromo(texto, ignorar_espacios=True, ignorar_mayusculas=True):
     str(texto)
     if ignorar_espacios:
-        return texto
-    else:
         texto = texto.replace(" ", "")
     if ignorar_mayusculas:
-        return texto
-    else:
         texto = texto.lower()
     inversa = texto[::-1]
     palindromo = inversa == texto
