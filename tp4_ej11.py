@@ -6,7 +6,6 @@
 from tp4_ej1 import IngresoIncorrecto
 
 def es_palindromo(texto, ignorar_espacios=True, ignorar_mayusculas=True):
-    str(texto)
     if ignorar_espacios:
         texto = texto.replace(" ", "")
     if ignorar_mayusculas:
