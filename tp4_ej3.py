@@ -18,7 +18,8 @@ def ingreso_float(mensaje):
 def convertir_a_fahrrenheit(in_celcius):
     try:
         fahrrenheit = ((in_celcius * 1.8) + 32)
-        msj = f"La Temperatura de {in_celcius}°C equivale a {fahrrenheit}°F"
+        fahrrenheit = round(fahrrenheit, 1)
+        return fahrrenheit
     except ValueError as err:
         raise IngresoIncorrecto
     return msj
@@ -26,7 +27,8 @@ def convertir_a_fahrrenheit(in_celcius):
 def convertir_a_centigrados(in_fahrren):
     try:
         centigrados = ((in_fahrren - 32) / 1.8)
-        msj = f"La Temperatura de {in_fahrren}°C equivale a {centigrados}°F"
+        centigrados = round(centigrados, 1)
+        return centigrados
     except ValueError as err:
         raise IngresoIncorrecto
     return msj
@@ -34,13 +36,13 @@ def convertir_a_centigrados(in_fahrren):
 def prueba():
     print("Esto pasara de °C --->°F")
     in_celcius = ingreso_float("Ingrese temperatura en grados Celcius")
-    msj = convertir_a_fahrrenheit(in_celcius)
-    print(msj)
+    fahrrenheit = convertir_a_fahrrenheit(in_celcius)
+    print(f"su temperatura en fahrrenheit es {fahrrenheit}°F")
     
     print("Esto pasara de °F --->°C")
     in_fahrren = ingreso_float("Ingrese temperatura en grados fahrrenheit")
-    msj = convertir_a_centigrados(in_fahrren)
-    print(msj)
+    centigrados = convertir_a_centigrados(in_fahrren)
+    print(f"su temperatura en centigrados es {centigrados}°F")
     
 
 if __name__ == "__main__":
