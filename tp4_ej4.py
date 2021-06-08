@@ -8,13 +8,12 @@ from tp4_ej1 import ingreso_entero, IngresoIncorrecto
 def compara(numero1, numero2):
     if numero1 < numero2:
         resultado = -1
-        return resultado
     elif numero1 == numero2:
         resultado = 0
-        return resultado
     else:
         resultado = 1
-        return resultado
+    
+    return resultado
 
 def prueba():
     print("Este programa compara dos números ingresados")
